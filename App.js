@@ -12,6 +12,8 @@ import { theme } from "./src/theme";
 
 import { Navigator } from "./src/navigators";
 
+import { AuthenticationContextProvider } from "./src/services/authentication.context";
+
 export default function App() {
   const [nunitoLoaded] = useNunito({
     Nunito_400Regular,
@@ -25,7 +27,9 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Navigator />
+        <AuthenticationContextProvider>
+          <Navigator />
+        </AuthenticationContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>

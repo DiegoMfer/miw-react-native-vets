@@ -8,10 +8,9 @@ import {
   useFonts as useRoboto,
   RobotoMono_700Bold,
 } from "@expo-google-fonts/roboto-mono";
-import { theme } from "./src/theme";
 
+import { theme } from "./index";
 import { Navigator } from "./src/navigators";
-
 import { AuthenticationContextProvider } from "./src/services/authentication.context";
 
 export default function App() {

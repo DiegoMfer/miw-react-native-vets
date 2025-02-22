@@ -2,8 +2,7 @@ import React, { useState, createContext } from "react";
 import { loginRequest, createUserRequest } from "./authentication.service";
 export const AuthenticationContext = createContext();
 export const AuthenticationContextProvider = ({ children }) => {
-  //const [user, setUser] = useState(null);
-  const [user, setUser] = useState({ uid: 1, email: "user1@email.com" });
+  const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const onLogin = (email, password) => {
@@ -20,6 +19,7 @@ export const AuthenticationContextProvider = ({ children }) => {
         setError(err);
       });
   };
+
   const onRegister = (email, password, repeatedPassword) => {
     setIsLoading(true);
     setError(null);
@@ -39,11 +39,13 @@ export const AuthenticationContextProvider = ({ children }) => {
         setError(err);
       });
   };
+
   const onLogout = () => {
     setIsLoading(false);
     setError(null);
     setUser(null);
   };
+
   return (
     <AuthenticationContext.Provider
       value={{

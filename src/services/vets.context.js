@@ -1,7 +1,6 @@
 import { useState, useContext, createContext, useEffect } from "react";
 import { LocationContext } from "./location.context";
 import { vetsRequest, vetsTransform } from "./vets.service";
-
 export const VetsContext = createContext();
 export const VetsContextProvider = ({ children }) => {
   const [vets, setVets] = useState([]);

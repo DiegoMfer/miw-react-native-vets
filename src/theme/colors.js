@@ -1,5 +1,4 @@
 import { MD2Colors } from "react-native-paper";
-
 export const colors = {
   animation: MD2Colors.deepOrange400,
   button: MD2Colors.blue800,
